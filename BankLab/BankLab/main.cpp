@@ -25,7 +25,7 @@ int main()
 void DisplayAccountsMenu()
 {
 	system("cls");
-	cout << bank.ShowAccounts();
+	cout << bank.ShowAccounts() << endl;
 	system("pause");
 }
 void TransactMenu()
