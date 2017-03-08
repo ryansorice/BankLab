@@ -25,7 +25,9 @@ std::string Bank::ShowAccounts()
 	int index = 0;
 	for (auto account : _accounts) //Can also be written as "for (Account account: _accounts)"
 	{
-		output += std::to_string(index) += std::to_string(account.getAccountNumber()) += "\n";
+		output += std::to_string(index);
+		output += ") ";
+		output += std::to_string(account.getAccountNumber()) += "\n";
 		index++;
 	}
 	return output;
@@ -38,7 +40,7 @@ std::string Bank::ListAccounts()
 
 void Bank::Deposit(int accountNumber, int amount)
 {
-	for (Account account : _accounts)
+	for (Account &account : _accounts)
 	{
 		if (account.getAccountNumber() == accountNumber)
 		{
@@ -51,7 +53,7 @@ void Bank::Deposit(int accountNumber, int amount)
 
 void Bank::Withdraw(int accountNumber, int amount)
 {
-	for (Account account : _accounts)
+	for (Account &account : _accounts)
 	{
 		if (account.getAccountNumber() == accountNumber)
 		{
