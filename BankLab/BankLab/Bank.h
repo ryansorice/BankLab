@@ -13,5 +13,6 @@ public:
 	~Bank();
 
 	std::string getName();
+	void CreateAccount(Account newAccount);
 };
 
