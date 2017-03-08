@@ -23,3 +23,8 @@ int Account::getBalance()
 {
 	return _balanceInPennies;
 }
+
+int Account::getAccountNumber()
+{
+	return _accountNumber;
+}
