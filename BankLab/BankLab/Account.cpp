@@ -24,7 +24,7 @@ void Account::Deposit(int numberOfPennies)
 void Account::Withdraw(int numberOfPennies)
 {
 	_balanceInPennies -= numberOfPennies;
-	_log.push_back(std::to_string(numberOfPennies) + " pennies withdrawn!");
+	_log.push_back(std::to_string(numberOfPennies) + " pennies deposited!");
 	//TODO: Add a message to the log
 }
 
