@@ -16,16 +16,16 @@ std::string Account::getCustomerNamer()
 
 void Account::Deposit(int numberOfPennies)
 {
-	_balanceInPennies += numberOfPennies;
-	_log.push_back(std::to_string(numberOfPennies) + " pennies deposited!"); 
+	_balanceInPennies += numberOfPennies; 
 	//TODO: Add a message to the log
+	_log.push_back(std::to_string(numberOfPennies) + " pennies deposited!");
 }
 
 void Account::Withdraw(int numberOfPennies)
 {
 	_balanceInPennies -= numberOfPennies;
-	_log.push_back(std::to_string(numberOfPennies) + " pennies deposited!");
 	//TODO: Add a message to the log
+	_log.push_back(std::to_string(numberOfPennies) + " pennies withdrew!");
 }
 
 int Account::getBalance()

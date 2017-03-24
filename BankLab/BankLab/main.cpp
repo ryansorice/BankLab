@@ -52,11 +52,19 @@ void TransactMenu()
 	int pennies;
 	cin >> pennies;
 
-	switch (transactionType)
+	if (pennies < 1)
 	{
-		case 1: bank.Deposit(chosenAccount, pennies); break;
-		case 2: bank.Withdraw(chosenAccount, pennies); break;
-		default: cout << "Error!!! Wrong input\n"; break;
+		cout << "Error!!! Cannot withdraw/deposite 0 or negative pennies!\n";
+		system("pause");
+	}
+	else
+	{
+		switch (transactionType)
+		{
+			case 1: bank.Deposit(chosenAccount, pennies); break;
+			case 2: bank.Withdraw(chosenAccount, pennies); break;
+			default: cout << "Error!!! Wrong input\n"; break;
+		}
 	}
 }
 void AddAccountMenu()
