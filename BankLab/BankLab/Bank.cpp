@@ -63,6 +63,11 @@ std::string Bank::ListAccounts()
 	return output;
 }
 
+std::vector<Account> Bank::getAccounts()
+{
+	return _accounts;
+}
+
 void Bank::Deposit(int accountNumber, int amount)
 {
 	for (Account &account : _accounts)

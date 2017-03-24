@@ -14,6 +14,7 @@ void DisplayMenu();		//Displays bank menu
 void AddAccountMenu();
 void TransactMenu();
 void DisplayAccountsMenu();
+void DisplayTransactionLog();
 
 int main() 
 {
@@ -97,6 +98,7 @@ void DisplayMenu()
 		cout << "1) Add Account" << endl;
 		cout << "2) Transact" << endl;
 		cout << "3) Display Accounts" << endl;
+		cout << "4) Transaction Log" << endl; 
 		cout << "What would you like to do? " << endl;
 		cin >> choice;
 
@@ -105,7 +107,28 @@ void DisplayMenu()
 			case 1: AddAccountMenu(); break;
 			case 2: TransactMenu(); break; 
 			case 3: DisplayAccountsMenu(); break;
+			case 4: DisplayTransactionLog(); break;
 			default: break;
 		}
-	} while (choice > 0 && choice < 4);
+	} while (choice > 0 && choice < 5);
+}
+
+void DisplayTransactionLog()
+{
+	system("cls");
+	cout << "Which account?\n";
+	cout << bank.ListAccounts() << endl;
+
+	int accountNumber;
+	cin >> accountNumber;
+	system("cls");
+
+	for (Account account : bank.getAccounts())
+	{
+		if (account.getAccountNumber() == accountNumber)
+		{
+			cout << account.DisplayLog() << endl;
+			system("pause");
+		}
+	}
 }

@@ -37,3 +37,13 @@ int Account::getAccountNumber()
 {
 	return _accountNumber;
 }
+
+std::string Account::DisplayLog()
+{
+	std::string output = "Transaction Log \n";
+	while (!_log.empty()) {
+		output += _log.back() + "\n";
+		_log.pop_back();
+	}
+	return output;
+}
